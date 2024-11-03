@@ -80,7 +80,13 @@ img {
     background-repeat: no-repeat;
     background-size: cover;
 }
-
+@media screen and (min-device-pixel-ratio: 2),
+screen and (min-resolution: 192dpi),
+screen and (min-resolution: 2dppx) {
+.hero {
+        background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/hero/heromob2x-min.jpg);
+    }
+}
 .hero-title {
     font-weight: 700;
     font-size: 36px;
@@ -100,6 +106,15 @@ img {
         padding: 112px 0;
         background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/hero/herotab-min.jpg);
     }
+
+        @media screen and (min-device-pixel-ratio: 2),
+        screen and (min-resolution: 192dpi),
+        screen and (min-resolution: 2dppx) {
+            .hero {
+                background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/hero/herotab2x-min.jpg);
+            }
+        }
+
         .hero-title {
             font-size: 56px;
             line-height: 1.07;
@@ -115,6 +130,14 @@ img {
         padding: 188px 0;
         background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/hero/heroimg.jpg);
     }
+
+        @media screen and (min-device-pixel-ratio: 2),
+        screen and (min-resolution: 192dpi),
+        screen and (min-resolution: 2dppx) {
+            .hero {
+                background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/hero/herodesc2x-min.jpg);
+            }
+        }
         .hero-title {
             margin-bottom: 48px;
         }
@@ -314,6 +337,11 @@ gap: 24px;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.social-link:hover,
+.social-link:focus {
+    background-color: #404bbf;
+}
+
 @media  screen and (min-width: 768px) {
 .team-list{
     max-width: 768px;
@@ -328,9 +356,127 @@ gap: 24px;
     .team {
             padding: 120px 0 120px 0;
         }
-        
+
          .team-list {
             max-width: 1440px;
             flex-wrap: nowrap;
         }    
+}
+/* ========================portfolio========================= */
+
+.portfolio {
+    padding: 96px 0;
+}
+
+.portfolio-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+        gap: 48px;
+box-shadow: 0 1px 6px 0 rgba(46, 47, 66, 0.08);
+}
+
+.portfolio-title {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.11;
+    letter-spacing: 0.02em;
+    text-align: center;
+    color: #2e2f42;
+    text-transform: capitalize;
+    padding-right: auto;
+    padding-left: auto;
+    margin-bottom: 72px;
+}
+
+.portfolio-item-image {
+    background: url("path_to_image");
+}
+
+.portfolio-item-cover {
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-item {
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-item:hover {
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+        0px 1px 1px rgba(46, 47, 66, 0.16),
+        0px 2px 1px rgba(46, 47, 66, 0.08)
+}
+
+.portfolio-item:hover .portfolio-overlay-text {
+    transform: translateY(0);
+}
+
+.portfolio-overlay-text {
+    position: absolute;
+    background: #4d5ae5;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #f4f4fd;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: 40px 32px;
+    transform: translateY(100%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-container {
+    display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+        padding:  32px 0 32px 16px;
+}
+
+.portfolio-subtitle {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    color: #2e2f42;
+    margin-bottom: 8px;
+}
+
+.portfolio-item-text {
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #434455;
+}
+
+@media screen and (min-width: 768px) {
+    .portfolio{
+        padding: 16px 0;
+    }
+.portfolio-list {
+    /* display: flex;
+    flex-wrap: wrap; */
+        gap: 24px;
+        row-gap: 72px;
+        justify-content: center;
+}
+        .portfolio-item {
+            max-width: 356px;
+        }
+}
+
+@media screen and (min-width: 1158px) {
+    .portfolio {
+        padding: 120px 0;
+    }
+
+     .portfolio-container {
+        padding: 32px 16px;
+        border: 1px solid #e7e9fc;
+        border-top: none;
+        gap: 8px;
+                }
 }
